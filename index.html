@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sky Blue Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #263238, #37474f);
+      color: #e0f7fa;
+    }
+    header {
+      background: linear-gradient(135deg, #00bcd4, #00838f);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2.8em;
+      animation: fadeInDown 1s ease;
+    }
+    nav {
+      background-color: #006064;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    nav a:hover, nav a:focus {
+      background-color: #004d40;
+      transform: scale(1.05);
+      outline: none;
+      box-shadow: 0 0 10px #00acc1;
+    }
+    nav a.active {
+      box-shadow: 0 0 20px #00e5ff;
+      background-color: #004d40;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 1.2s ease-in-out;
+      transition: box-shadow 0.3s ease;
+    }
+    section:target {
+      box-shadow: 0 0 30px #00e5ff;
+    }
+    h2 {
+      font-size: 2em;
+      color: #00acc1;
+      margin-bottom: 20px;
+    }
+    .item {
+      background: #455a64;
+      padding: 15px 20px;
+      border-left: 6px solid #00acc1;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+      color: #e0f7fa;
+    }
+    .item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+    .certificates, .projects, .skills {
+      margin-top: 30px;
+    }
+    .about-section {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .about-img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 50% / 40%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .skill-box {
+      width: 180px;
+      height: 180px;
+      background: #546e7a;
+      border-radius: 12px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s, background 0.3s;
+      text-align: center;
+    }
+    .skill-box:hover, .skill-box:focus {
+      transform: scale(1.05);
+      background: #00acc1;
+      outline: none;
+    }
+    .skill-box img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #004d40;
+      color: #b2ebf2;
+      margin-top: 50px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    form input, form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    form button {
+      padding: 10px;
+      background-color: #00acc1;
+      border: none;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background-color: #00838f;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>My Sky Blue Portfolio</h1>
+  </header>
+
+  <nav>
+    <a href="#home" tabindex="1">Home</a>
+    <a href="#about" tabindex="2">About Me</a>
+    <a href="#education" tabindex="3">Education</a>
+    <a href="#skills" tabindex="4">Skills</a>
+    <a href="#contact" tabindex="5">Contact Me</a>
+  </nav>
+
+  <section id="home">
+    <h2>Home</h2>
+    <p>Hello! I'm <strong>Komal Barwat</strong>, a driven and passionate web developer in my first year of engineering. This is my personal portfolio, a reflection of my creativity and commitment to building beautiful, functional websites. Dive in to see what I'm learning and creating!</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-section">
+      <div>
+        <p>Hi, I'm <strong>Komal Barwat</strong>, a budding web developer currently in my first year of engineering. I'm passionate about crafting responsive and interactive websites that offer great user experiences. My curiosity drives me to explore new technologies and build projects that reflect real-world solutions.</p>
+        <p>I enjoy translating designs into code and continuously improving my development skills. From HTML and CSS to diving into JavaScript, I embrace every challenge as a learning opportunity. My goal is to create digital experiences that are not only functional but also aesthetically pleasing.</p>
+      </div>
+      <img src="Komal.jpg" alt="Profile Picture" class="about-img">
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="certificates">
+      <h3>Certificates</h3>
+      <a href="10th - Copy.jpg" target="_blank" class="item"><img src="10th - Copy.jpg" alt="10th Certificate">10th Certificate</a>
+      <a href="12th - Copy.jpg" target="_blank" class="item"><img src="12th - Copy.jpg" alt="Certificate">12th Certificate</a>
+      <a href="cet.jpg" target="_blank" class="item"><img src="cet.jpg" alt="Certificate">CET Certificate</a>
+      <a href="py 1.png" target="_blank" class="item"><img src="py 1.png" alt="Certificate">Python1 Certificate</a>
+      <a href="py 2.png" target="_blank" class="item"><img src="py 2.png" alt="Certificate">Python2 Certificate</a>
+      <a href="linux.png" target="_blank" class="item"><img src="linux.png" alt="Certificate">Linux Certificate</a>
+    </div>
+
+    <div class="projects">
+      <h3>ZEB Work</h3>
+      <a href="I1.jpg" target="_blank" class="item"><img src="I1.jpg" alt="Project">Carbon Footprint Calculation</a>
+      <a href="I2.jpg" target="_blank" class="item"><img src="I2.jpg" alt="Project">Greenness Calculation</a>
+      <a href="I3.jpg" target="_blank" class="item"><img src="I3.jpg" alt="Project">Electricity Bill Calculation</a>
+      <a href="I4.jpg" target="_blank" class="item"><img src="I4.jpg" alt="Project">Green Building Model</a>
+      <a href="Deforestation ZEB 2 file.pdf" target="_blank" class="item"><img src="pdf-icon.png" alt="PDF">Build it Green</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill-box" tabindex="6">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+        <strong>C</strong>
+        <p>Basic knowledge of programming logic, control structures, and memory management.</p>
+      </div>
+      <div class="skill-box" tabindex="7">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+        <strong>Java</strong>
+        <p>Understanding of object-oriented programming and building console-based apps.</p>
+      </div>
+      <div class="skill-box" tabindex="8">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <strong>Python</strong>
+        <p>Experience with scripting, automation, and basic data structures.</p>
+      </div>
+      <div class="skill-box" tabindex="9">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+        <strong>HTML5</strong>
+        <p>Semantic web development, structure, and layout design.</p>
+      </div>
+      <div class="skill-box" tabindex="10">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+        <strong>CSS3</strong>
+        <p>Styling and responsive design using Flexbox and Grid.</p>
+      </div>
+      <div class="skill-box" tabindex="11">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+        <strong>JavaScript</strong>
+        <p>Interactivity and DOM manipulation for dynamic websites.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; Copy right by Komal Barwat with ❤️
+  </footer>
+</body>
+</html>
